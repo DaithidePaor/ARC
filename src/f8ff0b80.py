@@ -28,6 +28,7 @@ sort = frequencies[frequencies[:, 1].argsort()]
 remove_col = sort[:,0]
 #print(remove_col)
 
+# remove zero(black) from array - most likely will have the highest frequency 
 remove_black = np.trim_zeros(remove_col)
 #print(remove_black)
 
@@ -35,4 +36,7 @@ remove_black = np.trim_zeros(remove_col)
 flip_em = np.flip(remove_black, axis=None)
 #print(flip_em)
 
+# because it has become a single array convert back to column array 
+# this is the now the output grid 
 output_grid = np.c_[flip_em]
+print(output_grid)
